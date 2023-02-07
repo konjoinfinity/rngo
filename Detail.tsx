@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, Text, TouchableOpacity} from 'react-native'
+import {View, Text, TouchableOpacity, Alert} from 'react-native'
 
 export default function Detail({route, navigation}: {route: any, navigation: any}){
   const { id } = route.params;
@@ -21,6 +21,18 @@ export default function Detail({route, navigation}: {route: any, navigation: any
           });
     }
 
+    function deleteBook() {
+        fetch(`http://192.168.0.103:4000/books/${id}`, {
+          method: "DELETE"
+        }).then(res => res.json())
+          .then(res => {
+            console.log(res)
+            Alert.alert(res, "You have deleted the book", [{text: "Ok", onPress: () => navigation.navigate('Books')}])
+          }).catch(error => {
+            console.log(`${error.message}!`);
+          });
+    }
+
     return (
       <View style={{ flex: 1 }}>
       <View style={{alignItems:'center', justifyContent: 'center', flexDirection:'row', 
@@ -35,7 +47,7 @@ export default function Detail({route, navigation}: {route: any, navigation: any
       onPress={() => console.log('edit')}>
         <Text style={{color: "#fff", fontSize: 25, alignSelf: 'center'}}>Edit</Text></TouchableOpacity>
         <TouchableOpacity style={{backgroundColor: "#000", height: 75, width: 150, borderRadius: 5, justifyContent: 'center', margin: 10 }} 
-      onPress={() => console.log('delete')}>
+      onPress={() => deleteBook()}>
         <Text style={{color: "#fff", fontSize: 25, alignSelf: 'center'}}>Delete</Text></TouchableOpacity>
         </View>
       </View>}

@@ -7,8 +7,11 @@ export default function Books({navigation}: {navigation: any}) {
   const [books, setBooks] = useState<any[]>([])
 
   useEffect(() => {
-    getBooks();
-  }, [])
+    const unsubscribe = navigation.addListener('focus', () => {
+      getBooks();
+    })
+      return unsubscribe;
+  }, [navigation])
   
   function getBooks() {
         fetch("http://192.168.0.103:4000/books", {
@@ -37,6 +40,26 @@ export default function Books({navigation}: {navigation: any}) {
         <Text style={{color: "#fff", fontSize: 25, alignSelf: 'center'}}>Details</Text></TouchableOpacity>
       </View></View>}
       estimatedItemSize={200}/>
+      <TouchableOpacity
+              style={{
+                height: 75,
+                width: 75,
+              position: 'absolute',
+              bottom: 40,
+              right: 30,
+              zIndex: 2,
+              shadowColor: 'rgba(0,0,0,.4)', 
+              shadowOffset: { height: 2.5, width: 2.5 }, 
+              shadowOpacity: 1, 
+              shadowRadius: 1, 
+              backgroundColor: '#000',
+              borderRadius: 100,
+              elevation: 8,
+            alignItems: 'center'}}
+                onPress={() =>
+                navigation.navigate("Add Book")}>
+                <Text style={{color: "#fff", fontSize: 55}}>+</Text>
+              </TouchableOpacity>
     </View>
   );
 }
