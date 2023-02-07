@@ -13,8 +13,19 @@ export default function AddModal({ navigation }) {
 }, [])
 
   const addBook = async() => {
-   console.log("Edit Book")
-  }
+   console.log("Add Book " + " " + title + " " + author + " " + desc)
+   let book = JSON.stringify({title: title, author: author, desc: desc})
+    fetch("http://192.168.0.103:4000/books", {
+      method: "POST",
+      body: book
+    }).then(res => res.json())
+      .then(res => {
+       console.log(res)
+       navigation.navigate("Books")
+      }).catch(error => {
+        console.log(`${error.message}!`);
+      });
+}
 
   return (
     <ScrollView keyboardShouldPersistTaps='handled'>
@@ -63,7 +74,7 @@ export default function AddModal({ navigation }) {
                 style={styles.button}
                   onPress={() => addBook()}>
                   <Text style={{fontWeight: "bold", color: "#fff"}}>
-                    Save
+                    Add
                   </Text>
                 </TouchableOpacity>
                 </View>      
