@@ -1,36 +1,25 @@
-# TypeScript Example
+# Top 5 Badges That Will Take Your GitHub Repository to the Next Level
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+## 1. GitHub Stats
 
-```sh
-npx create-react-native-app -t with-typescript
-```
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=Tanu-N-Prabhu&show_icons=true)
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+## 2. Most Used Languages
 
-## 🚀 How to use
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=Tanu-N-Prabhu&theme=blue-green)
 
-#### Creating a new project
+## 3. Contributors Badge
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
+![Your Repository's Stats](https://contrib.rocks/image?repo=Tanu-N-Prabhu/Python)
 
-### Adding TypeScript to existing projects
+## 4. Random Joke Generator
 
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
+![Jokes Card](https://readme-jokes.vercel.app/api)
 
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
+## 5. Profile View Counter
 
-## 📝 Notes
+![Profile View Counter](https://komarev.com/ghpvc/?username=Tanu-N-Prabhu)
 
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+### Repository View Counter - HITS
+
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https://github.com/Tanu-N-Prabhu/Python)
