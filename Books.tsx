@@ -35,8 +35,8 @@ export default function Books({navigation}: {navigation: any}) {
       <Text style={{fontSize: 28, fontWeight: '500', paddingBottom: 10}}>{item.title}</Text>
       <Text style={{fontSize: 18, fontWeight: '400', paddingBottom: 10}}>{item.author}</Text>
       <Text style={{fontSize: 20, fontWeight: '300', paddingBottom: 10, textAlign: 'center'}}>{item.desc}</Text>
-      <TouchableOpacity style={{backgroundColor: "#000", height: 75, width: 250, borderRadius: 5, alignSelf: 'center', justifyContent: 'center' }} 
-      onPress={() => navigation.navigate('Book Detail',{ id: item.id })}>
+      <TouchableOpacity style={{backgroundColor: "#000", height: 75, width: 150, borderRadius: 5, alignSelf: 'center', justifyContent: 'center' }} 
+      onPress={() => navigation.navigate('Book Detail',{ id: item.id, title: item.title, author: item.author, desc: item.desc })}>
         <Text style={{color: "#fff", fontSize: 25, alignSelf: 'center'}}>Details</Text></TouchableOpacity>
       </View></View>}
       estimatedItemSize={200}/>

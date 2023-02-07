@@ -2,12 +2,15 @@ import React, {useEffect, useState} from 'react'
 import {View, Text, TouchableOpacity, Alert} from 'react-native'
 
 export default function Detail({route, navigation}: {route: any, navigation: any}){
-  const { id } = route.params;
+  const { id, title, author, desc } = route.params;
   const [book, setBook] = useState<any>()
 
   useEffect(() => {
-    getBook();
-  }, [])
+    const unsubscribe = navigation.addListener('focus', () => {
+      getBook();
+    })
+      return unsubscribe;
+  }, [navigation])
   
   function getBook() {
         fetch(`http://192.168.0.103:4000/books/${id}`, {
@@ -44,7 +47,7 @@ export default function Detail({route, navigation}: {route: any, navigation: any
       <Text style={{fontSize: 20, fontWeight: '300', paddingBottom: 10, textAlign: 'center'}}>{book.desc}</Text>
       <View style={{flexDirection: 'row'}}>
       <TouchableOpacity style={{backgroundColor: "#000", height: 75, width: 150, borderRadius: 5, justifyContent: 'center', margin: 10 }} 
-      onPress={() => console.log('edit')}>
+      onPress={() => navigation.navigate("Edit Book",{ book: book })}>
         <Text style={{color: "#fff", fontSize: 25, alignSelf: 'center'}}>Edit</Text></TouchableOpacity>
         <TouchableOpacity style={{backgroundColor: "#000", height: 75, width: 150, borderRadius: 5, justifyContent: 'center', margin: 10 }} 
       onPress={() => deleteBook()}>

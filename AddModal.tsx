@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Platform, Text, Dimensions, TouchableOpacity, ScrollView, View, TextInput, StyleSheet } from 'react-native';
+import { Text, Dimensions, TouchableOpacity, ScrollView, View, TextInput, StyleSheet } from 'react-native';
 
 
 export default function AddModal({ navigation }) {
